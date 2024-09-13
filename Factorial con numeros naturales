@@ -1,0 +1,17 @@
+#Lenguaje c++
+int d, num, i;
+
+int fact (int x) {
+	int rep=1;
+	for (i=1; i <= x; i++) {
+	rep *= i;
+	}
+return rep;
+}
+
+int main() { 
+printf("Escribe un numero natural:\n");
+if
+scanf("%d", &num);
+printf("El factorial de %d es %d", num, fact(num));
+return 0;
