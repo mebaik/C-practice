@@ -1,0 +1,32 @@
+#include <cmath>
+#include <stdio.h>
+#include <iostream>
+/*Escriba un programa en C que entre tres enteros diferentes del teclado, imprima la suma,*/
+
+int a, b, c; 
+int i=1;
+
+int sum(int x, int y, int z) {
+	return x+y+z;
+}
+
+int main(){
+	printf("Hola, ingrese 3 numeros enteros (-1, 0 , 1) y el programa le devolvera la suma.\n");
+	do {
+		printf("Escriba un numero:\n");
+		if (i==1){
+			scanf("%d", &a);
+		}
+		else if (i==2){
+			scanf("%d", &b);
+		}
+		else{
+			scanf("%d", &c);
+		}
+		i++;
+	} while (i<4);
+	printf("La suma de %d, %d y %d, es: %d", a, b, c, sum(a,b,c));
+	return 0;
+
+}
+
