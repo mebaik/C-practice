@@ -1,0 +1,12 @@
+int a;
+
+int cuadrado(int a){
+	return a*a;
+}
+
+int main(){
+	printf("Bienvenido!\nIngrese un numero y recibira su cuadrado:\n");
+	scanf("%d", &a);
+	printf("El cuadrado del numero %d es %d", a, cuadrado(a));
+	return 0;
+}
