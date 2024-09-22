@@ -1,0 +1,26 @@
+#include <iostream>
+#include <stdio.h>
+#include <cmath>
+
+int a, b;
+
+int area(int x, int y){
+	return (x*y)/2;
+}
+
+int main (){
+	printf("Bienvenido!\n");
+	printf("Ingrese la base del triangulo\n");
+	scanf("%d", &a);
+	if (a<=0){
+		printf("Ingrese un numero valido \n");
+		scanf("%d", &a);
+	}
+	printf("Ingrese la altura del triangulo\n");
+	scanf("%d", &b);
+	if (b<=0){
+		printf("Ingrese un numero valido \n");
+		scanf("%d", &b);
+	}
+	printf("La area es: %d", area(a,b));
+}
