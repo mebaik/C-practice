@@ -1,0 +1,25 @@
+#include <iostream>
+#include <stdio.h>
+#include <cmath>
+
+int a, b;
+
+int sum(int x, int y){
+	return a+b;
+}
+
+int num(){
+	int p;
+	printf("Introduzca un numero naturale: \n");
+	scanf("%d", &p);
+	while(p<=0){
+		printf("El numero no es valido, introduzca un numero natural (mayor que 0): \n");
+		scanf("%d", &p);
+	}
+}
+int main (){
+	printf("Bienvenido!\n");
+	a = num();
+	b=num();
+	printf("La suma es: %d", sum(a,b));
+}
