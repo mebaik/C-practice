@@ -1,0 +1,70 @@
+#include <iostream>
+#include <stdio.h>
+#include <cmath>
+
+/*Escriba un programa en C que entre tres enteros diferentes del teclado, imprima la suma, el
+promedio, el producto, el más pequeño y el más grande de estos números.*/
+
+// variables
+int a,b,c, mayor, menor;
+
+
+int sum (int x, int y, int z){ // funcion suma
+	return x+y+z;
+}
+ int prm(int x, int y, int z){ // funcion promedio
+	return (x+y+z)/3;
+ }
+int prd(int x, int y, int z){ // funcion producto
+	return x*y*z;
+}
+
+int may(int x, int y, int z){  // funcion buscar mayor
+	mayor = x;
+	if ( y > mayor ){
+		mayor = y;
+	}
+	if ( z > mayor){
+		mayor = z;
+	}
+	return mayor;
+}
+
+int men(int x, int y, int z){ // funcion buscar menor
+	menor = x;
+	if ( menor > y ){
+		menor = y;
+	}
+	if ( menor > z ){
+		menor = z;
+	}
+	return menor;
+}
+
+int num(){
+	int p;
+	printf("Por favor, ingrese un número natural: \n");
+	scanf("%d", &p);
+	while (p <= 0){
+		printf("El numero ingresado, no es un numero entero, por favor, ingrese un numero natural: \n ");	
+		scanf("%d", &p);
+	}		
+	return p;
+}
+
+
+int main(){
+	printf("Bienvenido!\nEste programa le pedirá ingresar tres numeros.\nLuego devolvera: la suma, el producto, el promedio, el mayor y menor de los numeros.\n");
+
+	a = num();
+	b = num();
+	c= num();
+	
+	printf("El numero mayor es: %d\n", may(a,b,c) );
+	printf("El numero menor es: %d\n", men(a,b,c) );
+	printf("La suma de los tres numeros es: %d\n", sum(a,b,c) );
+	printf("El producto de los tres numeros es: %d\n", prd(a,b,c) );
+	printf("El promedio de los tres numeros es: %d\n", prm(a,b,c) );
+	return 0;
+
+}
