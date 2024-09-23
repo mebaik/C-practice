@@ -1,0 +1,21 @@
+#include <iostream>
+#include <stdio.h>
+#include <cmath>
+
+/*Una tienda ofrece un descuento del 15% sobre el total de la compra y
+un cliente desea saber cuánto deberá pagar finalmente por su
+compra.*/
+
+int total, desc;
+
+int descuento (int a){
+	return a*0.85;
+}
+
+int main(){
+	printf("Bienvenido.\nIngrese el total de su compra :  ");
+	scanf("%d", &total);
+	desc = total*0.15;
+	printf("El total de su compra es %d.\nEl descuento es %d.\nEl total a pagar es %d.", total, desc, descuento(total));
+	return 0;
+}
