@@ -1,0 +1,22 @@
+#include <iostream>
+#include <stdio.h>
+#include <cmath>
+#include <vector>
+
+/*d) Imprima los valores de cada elemento del arreglo tabla. Suponga que el arreglo se
+inicializó con la declaración:
+int tabla[ TAMANIO ][ TAMANIO ] = { { 1, 8}, { 2, 4, 6 }, { 5 } };*/
+
+#define v 3
+
+int tabla[v][v] = { {1, 8}, { 2, 4, 6 }, { 5 } };
+int f, k;
+
+int main(){
+	for (f = 0; f < v; f++) {
+		for (k = 0; k < v; k++){
+			printf("%d ", tabla[f][k]);
+		}
+	printf("\n");
+	}
+}
