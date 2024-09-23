@@ -1,0 +1,20 @@
+#include <iostream>
+#include <stdio.h>
+#include <cmath>
+#include <vector>
+
+/*b) ¿Cuántos elementos contiene el arreglo tabla? Imprima el número total de elementos.*/
+#define x 3
+int i,j, n=0;
+int a [x][x] = {1}; // solo un elemento vale 1, el resto 0 por default
+int main(){
+	for(i=0; i<3; i++){
+		for(j=0; j<3; j++){
+			printf("%d ", a[i][j]);
+			n++;
+		}
+	printf("\n");
+	}
+	printf("La cantidad de elementos en la matriz 3x3 es %d", n);
+	return 0;
+}
