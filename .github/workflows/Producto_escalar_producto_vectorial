@@ -1,0 +1,48 @@
+#include <iostream>
+#include <stdio.h>
+#include <cmath>
+#include <vector>
+
+/*Diseña un programa, que solicite dos vectores por teclado y calcule su producto escalar y
+su producto vectorial.*/
+int a[3];
+int b[3];
+int c [3];
+int i, d, punto;
+
+
+int main(){
+	printf("Bienvenido.\nEl programa le pedira ingresar dos vectores diferentes y le devolvera su vector escalar y vectorial");
+	
+	for(i = 0; i < 3; i++){
+		printf("\n\nIngrese un numero entero para el primer vector:\n");
+     	scanf("%d", &a[i]);
+	}
+	for(i = 0; i < 3; i++){
+		printf("\n\nIngrese un numero entero para el segundo vector:\n");
+     	scanf("%d", &b[i]);
+	}
+	printf("\n\nEl primer vector es:\n");
+	for(i = 0; i < 3; i++){
+		printf("| %d ", a[i]);
+	}
+	printf("|");
+	printf("\n\nEl segundo vector es:\n");
+	for(i = 0; i < 3; i++){
+		printf("| %d ", b[i]);
+	}
+	printf("|");
+	
+	c[0] = (a[1]*b[2]) - (a[2]*b[1]);
+	c[1] = -(a[0]*b[2] - a[2]*b[0]);
+	c[2] = (a[0]*b[1])- (a[1]*b[0]);
+	
+	punto = a[0]*b[0] + a[1]*b[1] + a[2]*b[2];
+	
+	printf("\nEl producto vectorial del vector A y el vector B es:\n");
+	printf("%di + %dj + %dk", c[0], c[1], c[2]);
+	printf("\nEl producto punto del vector A y el vector B es:\n");
+	printf("%d", punto);
+	
+	return 0;
+}
