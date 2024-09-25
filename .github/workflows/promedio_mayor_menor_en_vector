@@ -1,0 +1,61 @@
+#include <iostream>
+#include <stdio.h>
+#include <cmath>
+#include <vector>
+
+/*Dado un array de N elementos obtener el número menor, el mayor y el promedio entre los
+elementos del array.*/
+
+
+int c, y, x, my, mn;
+float sum = 0;
+int a [0];
+
+float prm (){
+	for (y = 0; y < c; y++){
+		sum += a[y];	
+	}
+	return sum/c;
+}
+
+int may(){
+	my = a[0];
+	for (y = 1; y < c; y++){
+		if (a[y] > my){
+			my = a[y];
+		}
+	}	
+	return my;
+}
+
+int men(){
+	mn = a[0];
+	for (y = 1; y < c; y++){
+		if (a[y] < mn){
+			mn = a[y];
+		}
+	}	
+		return mn;
+}
+
+int main(){
+	printf("Bienvenido.\nEste programa creara un vector con la cantidad de elementos que introduzca.\n");
+	printf("Escriba la cantidad de elementos que desea ingresar:\n");
+	scanf("%d", &c);
+
+	for (y = 0; y < c; y++){
+		printf("\nEscriba el elemento que desea ingresar:\n");
+		scanf("%d", &x);
+		a[y] = x;
+		}
+	printf("\nEl vector 'A' es :\n");
+	for (y = 0; y < c; y++){
+		printf("| %d ", a [y]);
+	}
+	printf("|\n\n");
+
+	printf("El promedio de todos los elementos del vector 'A' es : %.2f", prm());
+	printf("\nEl numero mayor del vector 'A' es : %d", may());
+	printf("\nEl numero menor del vector 'A' es : %d", men());
+	return 0;
+}
