@@ -1,0 +1,45 @@
+#include <iostream>
+#include <stdio.h>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    vector<int> A(10);
+    int max_val, count;
+    vector<int> positions;
+
+    printf("Bienvenido al programa.\nEste le pedira ingresar 10 numeros naturales y luego\nle mostrara cuantas veces se ha repetido el ingreso de\ndicho elemento en orden descendente.\n");
+
+    // Leer los 10 números naturales
+    for (int i = 0; i < 10; i++) {
+        printf("Ingrese un numero natural:\n");
+        scanf("%d", &A[i]);
+    }
+
+    // Encontrar el valor máximo y sus posiciones
+    max_val = A[0];
+    for (int i = 1; i < 10; i++) {
+        if (A[i] > max_val) {
+            max_val = A[i];
+        }
+    }
+
+    // Contar cuántas veces aparece el valor máximo y sus posiciones
+    count = 0;
+    for (int i = 0; i < 10; i++) {
+        if (A[i] == max_val) {
+            count++;
+            positions.push_back(i + 1); // Guardar la posición (1-indexed)
+        }
+    }
+
+    // Imprimir el resultado
+    printf("El elemento %d se repite %d veces, en las posiciones: ", max_val, count);
+    for (int pos : positions) {
+        printf("%d ", pos);
+    }
+    printf("\n");
+
+    return 0;
+}
