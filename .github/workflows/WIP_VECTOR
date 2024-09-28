@@ -1,0 +1,48 @@
+#include <iostream>
+#include <stdio.h>
+#include <vector>
+
+using namespace std;
+
+/*Escribe un programa C++ que lea una sucesión de 10 números naturales, encuentre el
+valor máximo y lo imprima junto con el número de veces que aparece, y las posiciones en
+que esto ocurre. El proceso se repite con el resto de la sucesión hasta que no quede
+ningún elemento por tratar.
+Ejemplo de entrada:
+7 10 143 10 52 143 72 10 143 7
+Salida generada:
+143 aparece 3 veces, en posiciones 3 6 9.
+...
+7 aparece 2 veces, en posicione s 1 10*/
+
+std::vector <int> A;
+int posiciones [10];
+int mayor, x = 0;
+
+int repeticiones(){
+	mayor = A[0];
+	for (int i = 0; i < 10; i++){
+		if ( A[i + 1] > mayor) {
+			mayor = A [i + 1];
+		} 
+	}
+}
+
+int main () {
+	printf("Bienvenido al programa.\nEste le pedira ingresar 10 vectores y luego\nle mostrara cuantas veces se ha repetido el ingreso de\ndicho elemento en orden descendente.\n");
+	for (int i=0; i < 10; i++){
+		printf("Ingrese un numero natural:\n");
+		scanf("%d", &A[i]);
+	}
+	printf("Los elementos del vector A son:");
+	for (int i=0; i < 10; i++){
+		printf("| %d ", A[i]);
+	}
+	printf("|");
+	printf("\nEl elemento %d se repite %d", repeticiones() );
+	for (int i = 0; i < 10; i++){
+		printf("%d", posiciones[i]);
+	}
+	
+	return 0;
+}
