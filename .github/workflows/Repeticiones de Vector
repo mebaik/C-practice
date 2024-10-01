@@ -1,0 +1,48 @@
+#include <iostream>
+#include <stdio.h>
+#include <vector>
+
+using namespace std;
+
+vector<int> A(10);
+vector<int> posiciones;
+int mayor, x;
+
+void repeticiones() {
+    mayor = A[0];
+    x = 0;
+    posiciones.clear();
+    for (int i = 0; i < 10; i++) {
+        if (A[i] > mayor) {
+            mayor = A[i];
+            x = 1;
+            posiciones.clear();
+            posiciones.push_back(i + 1);
+        } else if (A[i] == mayor) {
+            x++;
+            posiciones.push_back(i + 1);
+        }
+    }
+}
+
+int main() {
+    printf("Bienvenido al programa.\nEste le pedira ingresar 10 numeros naturales y luego\nle mostrara cuantas veces se ha repetido el ingreso de\ndicho elemento en orden descendente.\n");
+    for (int i = 0; i < 10; i++) {
+        printf("Ingrese un numero natural:\n");
+        scanf("%d", &A[i]);
+    }
+    printf("Los elementos del vector A son:");
+    for (int i = 0; i < 10; i++) {
+        printf("| %d", A[i]);
+    }
+    printf("|\n");
+
+    repeticiones();
+    printf("El elemento %d se repite %d veces, en posiciones: ", mayor, x);
+    for (int i = 0; i < posiciones.size(); i++) {
+        printf("%d ,", posiciones[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
