@@ -1,0 +1,4 @@
+#include <stdio.h> // prattica con il cout e cin
+using namespace std;
+int main {
+  cout << "Hello world!" >>}
